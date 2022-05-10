@@ -1,0 +1,75 @@
+/* previous button */
+.prev-btn {
+  background-color: #a6afff;
+  color: rgb(0, 0, 0);
+  border-radius: 13rem;
+  margin-top: 1rem;
+  padding-top: 0rem;
+}
+.prev-btn:hover {
+  background-color: #273fa0;
+  color: rgb(255, 255, 255);
+  -webkit-transition: all 300ms ease;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+select {
+  background-color: #c9cedf;
+  -webkit-box-shadow: 0 0 10px rgb(154, 173, 236);
+  box-shadow: 0 0 10px rgb(154, 173, 236);
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  width: 35vh;
+  font-size: medium;
+}
+
+input[type="number"] {
+  background-color: #c9cedf;
+  -webkit-box-shadow: 0 0 10px rgb(154, 173, 236);
+  box-shadow: 0 0 10px rgb(154, 173, 236);
+  border: none;
+  border-radius: 5px;
+  height: 5vh;
+  width: 10vh;
+  font-size: medium;
+}
+
+.v-btn {
+  margin-left: 8vh;
+  background-color: #6877ff;
+  color: rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  height: 3rem;
+  width: 8rem;
+  font-size: large;
+  font-weight: bold;
+  -webkit-box-shadow: 0 0 10px rgb(255, 255, 255);
+  box-shadow: 0 0 10px #fff;
+  border: none;
+}
+.v-btn:hover {
+  background-color: #3c4bd4;
+  -webkit-transition: all 300ms ease;
+  transform: translateY(-1px);
+}
+.v-btn:active {
+  transform: translateY(2px);
+}
+
+.grn {
+  color :rgb(3, 189, 44)
+}
+
+.red {
+  color :rgb(255, 0, 0)
+}

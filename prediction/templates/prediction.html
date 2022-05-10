@@ -1,0 +1,84 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Prediction</title>
+        <link rel="stylesheet" href="{% static 'css/prediction.css' %}" />
+        <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+        />           
+    </head>
+
+    <body>
+        <div class="container-fluid">
+          
+            <div class="row-3" id="top_div"  style="background-image: url('../../static/img/b.jpg');">
+                <div>
+                  <a href="/" class="prev-btn" style="text-decoration:none;">
+                    <b style="font-size: x-large;">&laquo;</b>
+                  </a>
+                  
+                  <form action="" method="POST" >
+                      {% csrf_token %}
+                    <div style="display:inline; margin-left:35vh;">
+                      <span style="color:rgb(255, 255, 255); font-size:medium;">Company Symbol:</span>
+                      &nbsp;
+                      <select type="text" name="name" required>
+                        <option value="" style="font-weight:bold;">-- select company symbol --</option>
+                        {% for entry in objects %}
+                          <option style="font-weight:bold;" value={{entry}}>{{entry}}</option>
+                        {% endfor %}
+                      </select>
+                    </div>
+
+                    <div style="display:inline; margin-left:20vh;">
+                      <span style="color:rgb(255, 255, 255); font-size:medium;">Days for prediction:</span>
+                      &nbsp;
+
+                      {%if days%}
+                      <input type="number" name="day" value={{days}} placeholder="Enter number of days" min="1" required />
+                      {%else%}
+                      <input type="number" name="day" placeholder="Enter number of days" min="1" required />
+                      {%endif%}
+                       
+                      <br/><br/>
+                      <button class="pred-btn" type="submit" value="Prediction">Predict</button>
+                      <br/>
+                    </div>
+
+                  </form>
+                </div>
+            </div>
+
+            <div class="row-9" id="bottom_div">
+                
+              {%if data%}
+
+              {% comment %} <br/><br/>
+              <center>
+                {%for price in data%}
+                  {{price}}
+                {%endfor%}
+              </center> {% endcomment %}
+              
+              {% autoescape off %}
+                    <br/><center><b style="font-size: 25px;">PREDICTION CHART</b></center>
+                        <center>{{ plot_div }}</center>
+                            
+              {% endautoescape %}
+              
+              {% else %}
+                <div style="height:335px;">
+                  <div style="text-align:center; margin-top:30vh; font-size:x-large; font-weight:bold; color: black;">
+                    no company selected
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+
+          
+      </div>
+        
+        </script>
+    </body>
+</html>

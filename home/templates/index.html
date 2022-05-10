@@ -1,0 +1,42 @@
+<html>
+  <head>
+    {% load static %}
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <style>
+      body {
+        background-image: url("{% static 'img/b.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="heading">
+        <h1>Stock Visualizing and Forecasting</h1>
+      </div>
+
+      <a href="./admin">
+        <button class="admin-btn mt-2 mr-0">
+          <b>Admin</b>
+        </button>
+      </a>
+
+      <div style="margin-top: 30vh">
+        <form action="visualize" metho="GET">
+          <button type="submit" class="button">Visualization</button>
+        </form>
+        <form action="predict" metho="GET">
+          <button class="button">Prediction</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
